@@ -1,0 +1,80 @@
+.authentication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+}
+
+.authentication-form {
+    display: flex;
+
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    min-width: 400px;
+    width: 30%;
+    height: 60%;
+
+    padding: 35px;
+
+    background: white;
+    border-radius: 12px;
+}
+
+.authentication-form div {
+    height: 20%;
+    width: 100%;
+}
+
+.authentication-form h1 {
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+    font-size: 26px;
+    height: 45px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+}
+.authentication-form h3 {
+    font-size: 16px;
+    padding: 0 0 10px 10px;
+}
+.authentication-form span {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.authentication-form input {
+    background: rgb(255, 255, 255);
+
+    font-size: 18px;
+
+    width: 100%;
+    height: 45px;
+
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.05);
+
+    padding: 0 10px;
+}
+.authentication-form button {
+    background: #f49f0a;
+    color: white;
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    width: 100%;
+    height: 45px;
+
+    margin: 10px 0 0 0;
+}
+
+.authentication-form button:hover {
+    background: #f08700;
+}
