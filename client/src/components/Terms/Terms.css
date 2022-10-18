@@ -1,0 +1,249 @@
+.Terms {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   width: 100%;
+   padding: 1%;
+}
+
+.study-modes {
+   display: flex;
+   flex-direction: column;
+
+   background: #ffffff;
+   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25);
+   border-radius: 15px;
+
+   width: 100%;
+
+   margin: 0 0 1%;
+   padding: 1%;
+}
+
+.study-modes-setName {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+.study-modes-setName h2 {
+   font-size: 30px;
+   font-weight: 900;
+
+   padding: 3% 0 1%;
+}
+.study-modes-setName h3 {
+   font-size: 16px;
+   padding: 0 0 2%;
+}
+
+.study-modes-buttons {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+
+   color: white;
+
+   width: 100%;
+}
+
+.study-modes-buttons button {
+   background: #05668d;
+   color: rgb(255, 255, 255);
+
+   border-radius: 10px;
+
+   font-size: 20px;
+   font-weight: 500;
+
+   height: 50px;
+   width: 100%;
+   margin: 1% 1%;
+}
+
+.study-modes-buttons button:hover {
+   background: #00a896;
+   color: rgb(255, 255, 255);
+}
+
+.add-term {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+
+   border-radius: 15px;
+   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25);
+   background: url('./../../../public/plus.svg') center / 35% 35% no-repeat,
+      rgba(255, 255, 255, 0.3);
+
+   height: 100px;
+   width: 100%;
+
+   margin: 0 0 1% 0;
+}
+
+.add-term:hover {
+   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25);
+   background: url('./../../../public/plus.svg') center / 35% 35% no-repeat,
+      rgba(201, 201, 201, 0.3);
+}
+
+.show-terms {
+   display: flex;
+   flex-direction: row;
+
+   background: rgb(255, 255, 255);
+   border-radius: 15px;
+
+   height: 100%;
+   width: 100%;
+   margin-bottom: 1%;
+}
+.show-terms-text {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+
+   border-radius: 15px;
+
+   width: 100%;
+   margin: 2%;
+}
+
+.show-terms-text-div {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   height: 100%;
+   margin: 1% 0;
+}
+
+.show-terms-img {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   background: rgb(79, 131, 234);
+   border-radius: 15px;
+
+   width: 30%;
+   margin: 2%;
+}
+
+.show-terms h1 {
+   font-size: 24px;
+   font-weight: bold;
+}
+
+.show-terms-icon {
+   background: url('./../../../public/pencil.svg') center / 100% 100% no-repeat,
+      rgba(255, 255, 255, 0.3);
+
+   height: 22px;
+   width: 22px;
+   margin: 0 0 1% 1%;
+}
+
+.show-terms-div-definition {
+   display: flex;
+   flex-direction: column;
+
+   width: 100%;
+
+   /* padding: 1% 2% 2%; */
+}
+.show-terms-div-definition-div {
+   display: flex;
+   flex-direction: column;
+
+   width: 100%;
+   height: 100%;
+}
+
+.show-terms-div-definition-div p {
+   padding: 0.5% 0;
+   font-size: 16px;
+}
+
+.lastP {
+   padding: 0;
+   margin: 1% 0 1%;
+}
+
+/* .create-terms {
+  display: flex;
+  flex-direction: column;
+}
+.create-terms-div {
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 350px;
+}
+
+.create-terms-div-term {
+  display: flex;
+
+  width: 50%;
+
+  padding: 1% 0;
+  margin: 2% 0 0;
+}
+.create-terms-div-term input {
+  display: flex;
+  background: rgba(244, 158, 10, 1);
+  font-weight: 900;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 20px;
+}
+.create-terms-div-term input::placeholder {
+  color: white;
+}
+.create-terms-div-definition {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  width: 100%;
+
+  padding: 1% 2% 2%;
+}
+
+.create-terms-div-definition-div {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+}
+
+.create-terms-div-definition-div p {
+  font-size: 18px;
+  padding: 1%;
+}
+
+.create-terms-div-definition-div textarea {
+  border: 1.5px solid rgba(5, 102, 141, 0.5);
+  border-radius: 5px;
+
+  font-size: 18px;
+
+  height: 100px;
+
+  margin: 1%;
+  padding: 1%;
+
+  resize: none;
+} */
