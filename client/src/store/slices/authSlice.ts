@@ -42,11 +42,22 @@ const authSlice = createSlice({
          state.role = '';
          state.isAuth = false;
       },
+      profileReducer(state: AuthPayload, action: PayloadAction<AuthPayload>) {
+         state.id = action.payload.id;
+         state.email = action.payload.email;
+         state.role = action.payload.role;
+         state.isAuth = true;
+      },
    },
    extraReducers: {},
 });
 
-export const { loginReducer, registerReducer, checkReducer, logoutReducer } =
-   authSlice.actions;
+export const {
+   loginReducer,
+   registerReducer,
+   checkReducer,
+   logoutReducer,
+   profileReducer,
+} = authSlice.actions;
 
 export default authSlice.reducer;

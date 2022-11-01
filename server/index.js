@@ -8,16 +8,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
-const express = require('express');
+const express_1 = __importDefault(require("express"));
+const morgan_1 = __importDefault(require("morgan"));
 const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const mainRouter = require('./router/index');
 const errorMiddleware = require('./middlewares/error-middleware');
 const PORT = process.env.PORT || 6123;
-const app = express();
-app.use(express.json());
+const app = (0, express_1.default)();
+app.use((0, morgan_1.default)('dev'));
+app.use(express_1.default.json());
 app.use(cookieParser());
 app.use(cors({
     credentials: true,

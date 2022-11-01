@@ -89,11 +89,12 @@ class UserController {
             }
         });
     }
-    getUsers(req, res, next) {
+    getUserProfile(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const users = yield userService.getAllUsers();
-                return res.json(users);
+                const { email } = req.body;
+                const user = yield userService.getUserProfile(email);
+                return res.json(user);
             }
             catch (e) {
                 next(e);

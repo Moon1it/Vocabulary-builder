@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '../Header/Header.css';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { RootState } from '../../store/store';
 import { logoutReducer } from '../../store/slices/authSlice';
@@ -77,10 +77,11 @@ const Header = () => {
                   User name
                </NavLink>
 
-               <div
+               <Link
                   className='Header-personalAccount-image'
                   onClick={async () => await dispatch(logoutUser())}
-               ></div>
+                  to={'/auth'}
+               ></Link>
             </div>
          </div>
          <Outlet />

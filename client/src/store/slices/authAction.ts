@@ -1,4 +1,11 @@
-import { checkAuth, login, logout, registration } from '../../http/authApi';
+import { UserInfo } from 'os';
+import {
+   checkAuth,
+   fetchUser,
+   login,
+   logout,
+   registration,
+} from '../../http/authApi';
 import { AuthResponse } from '../../models/response/AuthResponse';
 import { AppDispatch } from '../store';
 import {
@@ -6,6 +13,7 @@ import {
    loginReducer,
    logoutReducer,
    registerReducer,
+   profileReducer,
 } from './authSlice';
 
 export const loginUser = (email: string, password: string) => {
@@ -70,6 +78,28 @@ export const logoutUser = () => {
          const response = await logout();
          console.log('logout', response);
          dispatch(logoutReducer());
+      } catch (e) {
+         console.log('error', e);
+      }
+   };
+};
+
+export const profileUser = (email: string) => {
+   return async (dispatch: AppDispatch) => {
+      try {
+         const data = await fetchUser(email);
+         console.log('profile', data.data);
+         dispatch(profileReducer(data.data));
+
+         console.log('res', data);
+         dispatch(
+            loginReducer({
+               id: data.data.id,
+               email: data.data.email,
+               role: data.data.role,
+               isAuth: data.data.isAuth,
+            })
+         );
       } catch (e) {
          console.log('error', e);
       }

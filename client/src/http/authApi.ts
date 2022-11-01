@@ -89,8 +89,8 @@ export const logout = async (): Promise<AuthResponse> => {
    return response.data;
 };
 
-export const fetchUsers = (): Promise<AxiosResponse<IUser[]>> => {
-   return $api.get<IUser[]>('/users');
+export const fetchUser = (email: string): Promise<AxiosResponse<IUser>> => {
+   return $api.post<IUser>('/user', { email: email });
 };
 
 export default $api;

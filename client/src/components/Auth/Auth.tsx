@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { loginUser } from '../../store/slices/authAction';
 import { RootState } from '../../store/store';
+import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 
 export default function Auth() {
@@ -11,6 +12,9 @@ export default function Auth() {
 
    const [email, setEmail] = useState<string>('');
    const [password, setPassword] = useState<string>('');
+
+   const navigate = useNavigate();
+
    return (
       <>
          <div className='authentication'>
@@ -41,14 +45,16 @@ export default function Auth() {
                      }}
                   />
                </div>
-               <Link
+               <button
                   className='Link'
-                  onClick={async () =>
-                     await dispatch(loginUser(email, password))
-                  }
-                  to={stateApp.auth.isAuth ? '/home' : '/auth'}
+                  onClick={async () => {
+                     await dispatch(loginUser(email, password));
+                  }}
                >
                   Sign In
+               </button>
+               <Link className='SignUp' to={'/reg'}>
+                  Sign up
                </Link>
             </div>
          </div>

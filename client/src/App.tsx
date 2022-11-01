@@ -17,9 +17,13 @@ const App = () => {
    const dispatch = useAppDispatch();
    const stateApp = useAppSelector((state: RootState) => state);
 
+   const initFunc = async () => {
+      await dispatch(checkUser());
+   };
+
    useEffect(() => {
       if (localStorage.getItem('token')) {
-         dispatch(checkUser());
+         initFunc();
       }
    }, []);
 
@@ -27,35 +31,28 @@ const App = () => {
       <>
          <BrowserRouter>
             <Routes>
-               <Route path='auth' element={<Auth />} />
-               <Route path='reg' element={<Reg />} />
-               <Route path='/' element={<Header />}>
-                  <Route path='home' element={<Main />} />
-                  <Route path='terms' element={<Terms />} />
-                  <Route path='user' element={<User />} />
-                  <Route path='/' element={<Navigate to='auth' />} />
-               </Route>
+               {stateApp.auth.isAuth ? (
+                  <>
+                     <Route path='auth' element={<Navigate to='/' />} />
+                     <Route path='/' element={<Navigate to='home' />} />
+                     <Route path='/' element={<Header />}>
+                        <Route path='home' element={<Main />} />
+                        <Route path='terms' element={<Terms />} />
+                        <Route path='user' element={<User />} />
+                     </Route>
+                  </>
+               ) : (
+                  <>
+                     <Route path='home' element={<Navigate to='/' />} />
+                     <Route path='/' element={<Navigate to='auth' />} />
+                     <Route path='auth' element={<Auth />} />
+                     <Route path='reg' element={<Reg />} />
+                  </>
+               )}
             </Routes>
          </BrowserRouter>
       </>
    );
 };
-
-// {stateApp.auth.isAuth ? (
-//    <>
-//       <Route path='/' element={<Header />}>
-//          <Route path='home' element={<Main />} />
-//          <Route path='terms' element={<Terms />} />
-//          <Route path='user' element={<User />} />
-//          <Route path='/' element={<Navigate to='home' />} />
-//       </Route>
-//    </>
-// ) : (
-//    <>
-//       <Route path='/' element={<Navigate to='auth' />} />
-//       <Route path='auth' element={<Auth />} />
-//       <Route path='reg' element={<Reg />} />
-//    </>
-// )}
 
 export default App;

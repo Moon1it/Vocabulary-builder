@@ -9,23 +9,22 @@
 
 .reg-form {
    display: flex;
-
-   align-items: flex-start;
    flex-direction: column;
+   align-items: flex-start;
    justify-content: space-evenly;
 
-   min-width: 400px;
-   width: 30%;
-   height: 60%;
+   width: 450px;
+   height: 70%;
 
-   padding: 35px;
+   padding: 2vh 4vh;
 
    background: white;
    border-radius: 12px;
 }
 
 .reg-form div {
-   height: 20%;
+   display: flex;
+   flex-direction: column;
    width: 100%;
 }
 .header-text {
@@ -43,8 +42,9 @@
 }
 
 .reg-form h3 {
+   display: flex;
    font-size: 16px;
-   margin: 0 0 2% 2%;
+   margin: 2%;
 }
 .reg-form span {
    font-weight: 100;
@@ -63,9 +63,13 @@
    border: 2px solid rgba(0, 0, 0, 0.1);
    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.05);
 
-   padding: 0 10px;
+   padding: 0 2%;
 }
 .reg-form button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
    background: #05668d;
    color: white;
    border-radius: 5px;
@@ -75,9 +79,22 @@
    width: 100%;
    height: 45px;
 
-   margin: 10px 0 0 0;
+   margin: 3% 0 0;
 }
 
 .reg-form button:hover {
    background: #013f58;
+}
+
+.SignIn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   color: #05668d;
+   font-size: 18px;
+   font-weight: 100;
+
+   width: 100%;
+   height: 45px;
 }

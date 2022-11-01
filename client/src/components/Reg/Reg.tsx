@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { registerUser } from '../../store/slices/authAction';
 import { RootState } from '../../store/store';
@@ -8,6 +9,7 @@ export default function Reg() {
    const dispatch = useAppDispatch();
    const stateApp = useAppSelector((state: RootState) => state);
 
+   const [name, setName] = useState<string>('');
    const [email, setEmail] = useState<string>('');
    const [password, setPassword] = useState<string>('');
    return (
@@ -17,6 +19,17 @@ export default function Reg() {
                <div className='header-text'>
                   <h1>Sign Up</h1>
                   <p>Create a new account</p>
+               </div>
+               <div>
+                  <h3>Name</h3>
+                  <input
+                     type='text'
+                     placeholder='Email'
+                     value={name}
+                     onChange={(e) => {
+                        setName(e.target.value);
+                     }}
+                  />
                </div>
                <div>
                   <h3>Email</h3>
@@ -40,9 +53,17 @@ export default function Reg() {
                      }}
                   />
                </div>
-               <button onClick={() => dispatch(registerUser(email, password))}>
-                  Sign Up
-               </button>
+               <div>
+                  <button
+                     onClick={() => dispatch(registerUser(email, password))}
+                  >
+                     Sign Up
+                  </button>
+               </div>
+
+               <Link className='SignIn' to={'/auth'}>
+                  Sign In
+               </Link>
             </div>
          </div>
       </>

@@ -85,10 +85,10 @@ class UserService {
             return Object.assign(Object.assign({}, tokens), { user: userDto });
         });
     }
-    getAllUsers() {
+    getUserProfile(email) {
         return __awaiter(this, void 0, void 0, function* () {
-            const users = yield UserModel.find();
-            return users;
+            const user = yield UserModel.findOne({ email });
+            return user;
         });
     }
 }
